@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.0.5
+%define		kdeplasmaver	6.1.0
 %define		qtver		5.15.2
 %define		kpname		kinfocenter
 Summary:	kinfocenter
 Name:		kp6-%{kpname}
-Version:	6.0.5
+Version:	6.1.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	f97e0e893d49df544614350db71adbd4
+# Source0-md5:	78ccb464eabfdc58ae533ce2bb628826
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	OpenGL-devel
@@ -32,6 +32,7 @@ BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xz
+Obsoletes:	kp5-%{kpname} < %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -73,13 +74,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kcm_energyinfo.so
 %dir %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_cpu.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_devinfo.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_egl.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_firmware_security.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_glx.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_interrupts.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_kwinsupportinfo.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_nic.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_opencl.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_pci.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_samba.so
@@ -87,6 +86,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_vulkan.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_wayland.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_xserver.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_audio_information.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_block_devices.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_network.so
 %{_libdir}/qt6/qml/org/kde/kinfocenter/private/CommandOutputKCM.qml
 %{_libdir}/qt6/qml/org/kde/kinfocenter/private/qmldir
 %attr(755,root,root) %{_prefix}/libexec/kf6/kauth/kinfocenter-dmidecode-helper
