@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.1.5
+%define		kdeplasmaver	6.2.0
 %define		qtver		5.15.2
 %define		kpname		kinfocenter
 Summary:	kinfocenter
 Name:		kp6-%{kpname}
-Version:	6.1.5
+Version:	6.2.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	1af1affee32bd9573ace7329bf8a8363
+# Source0-md5:	aa1ca8fa32c44b6a8432fe110f26648a
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	OpenGL-devel
@@ -89,6 +89,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_audio_information.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_block_devices.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_network.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_memory.so
 %{_libdir}/qt6/qml/org/kde/kinfocenter/private/CommandOutputKCM.qml
 %{_libdir}/qt6/qml/org/kde/kinfocenter/private/qmldir
 %attr(755,root,root) %{_prefix}/libexec/kf6/kauth/kinfocenter-dmidecode-helper
