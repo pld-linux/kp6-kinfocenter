@@ -90,6 +90,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_block_devices.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_network.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_memory.so
+%dir %{_libdir}/qt6/qml/org/kde/kinfocenter
+%dir %{_libdir}/qt6/qml/org/kde/kinfocenter/private
 %{_libdir}/qt6/qml/org/kde/kinfocenter/private/CommandOutputKCM.qml
 %{_libdir}/qt6/qml/org/kde/kinfocenter/private/qmldir
 %attr(755,root,root) %{_prefix}/libexec/kf6/kauth/kinfocenter-dmidecode-helper
@@ -97,11 +99,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/kcm_energyinfo.desktop
 %{_datadir}/dbus-1/system-services/org.kde.kinfocenter.dmidecode.service
 %{_datadir}/dbus-1/system.d/org.kde.kinfocenter.dmidecode.conf
+%dir %{_datadir}/kinfocenter
+%dir %{_datadir}/kinfocenter/categories
 %{_datadir}/kinfocenter/categories/basicinformation.desktop
 %{_datadir}/kinfocenter/categories/deviceinfocategory.desktop
 %{_datadir}/kinfocenter/categories/graphicalinfocategory.desktop
 %{_datadir}/kinfocenter/categories/lostfoundcategory.desktop
 %{_datadir}/kinfocenter/categories/networkinfocategory.desktop
-%{_datadir}/kinfocenter/firmware_security/fwupdmgr.sh
+%dir %{_datadir}/kinfocenter/firmware_security
+%attr(755,root,root) %{_datadir}/kinfocenter/firmware_security/fwupdmgr.sh
 %{_datadir}/metainfo/org.kde.kinfocenter.appdata.xml
 %{_datadir}/polkit-1/actions/org.kde.kinfocenter.dmidecode.policy
