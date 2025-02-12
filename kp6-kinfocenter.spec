@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.2.5
+%define		kdeplasmaver	6.3.0
 %define		qtver		5.15.2
 %define		kpname		kinfocenter
 Summary:	kinfocenter
 Name:		kp6-%{kpname}
-Version:	6.2.5
+Version:	6.3.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	cd602d983927f06272abe3f8c9d98c5d
+# Source0-md5:	fc0affefb57f681b4ce10162338394e4
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	OpenGL-devel
@@ -66,9 +66,9 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{kpname}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kinfocenter
-/etc/xdg/menus/kinfocenter.menu
 %{_desktopdir}/org.kde.kinfocenter.desktop
-%{_datadir}/desktop-directories/kinfocenter.directory
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_edid.so
+%attr(755,root,root) %{_prefix}/libexec/kinfocenter-opengl-helper
 %attr(755,root,root) %{_libdir}/libKInfoCenterInternal.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kcm_about-distro.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kcm_energyinfo.so
@@ -106,6 +106,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kinfocenter/categories/graphicalinfocategory.desktop
 %{_datadir}/kinfocenter/categories/lostfoundcategory.desktop
 %{_datadir}/kinfocenter/categories/networkinfocategory.desktop
+%dir %{_datadir}/kinfocenter/edid
+%attr(755,root,root) %{_datadir}/kinfocenter/edid/edid.sh
 %dir %{_datadir}/kinfocenter/firmware_security
 %attr(755,root,root) %{_datadir}/kinfocenter/firmware_security/fwupdmgr.sh
 %{_datadir}/metainfo/org.kde.kinfocenter.appdata.xml
