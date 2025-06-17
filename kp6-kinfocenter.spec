@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.3.5
+%define		kdeplasmaver	6.4.0
 %define		qtver		5.15.2
 %define		kpname		kinfocenter
 Summary:	kinfocenter
 Name:		kp6-%{kpname}
-Version:	6.3.5
+Version:	6.4.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	575a0fdc89ad049d3a25fa0677bde1cd
+# Source0-md5:	2e02a7110751d2d5cc39c159fffce85d
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	OpenGL-devel
@@ -97,9 +97,14 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_block_devices.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_network.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_memory.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_sensors.so
 %dir %{_libdir}/qt6/qml/org/kde/kinfocenter
 %dir %{_libdir}/qt6/qml/org/kde/kinfocenter/private
-%{_libdir}/qt6/qml/org/kde/kinfocenter/private/CommandOutputKCM.qml
+%{_libdir}/qt6/qml/org/kde/kinfocenter/private/KInfoCenterInternal.qmltypes
+%{_libdir}/qt6/qml/org/kde/kinfocenter/private/kde-qmlmodule.version
+%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/kinfocenter/private/libKInfoCenterInternalplugin.so
+%dir %{_libdir}/qt6/qml/org/kde/kinfocenter/private/qml
+%{_libdir}/qt6/qml/org/kde/kinfocenter/private/qml/CommandOutputKCM.qml
 %{_libdir}/qt6/qml/org/kde/kinfocenter/private/qmldir
 %attr(755,root,root) %{_prefix}/libexec/kf6/kauth/kinfocenter-dmidecode-helper
 %{_desktopdir}/kcm_about-distro.desktop
