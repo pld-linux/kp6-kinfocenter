@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.4.5
+%define		kdeplasmaver	6.5.0
 %define		qtver		5.15.2
 %define		kpname		kinfocenter
 Summary:	kinfocenter
 Name:		kp6-%{kpname}
-Version:	6.4.5
-Release:	2
+Version:	6.5.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	6940228d7239dd1abf0d707864bfc955
+# Source0-md5:	9519b22c4c5734c7f096f0a31400adb9
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	OpenGL-devel
@@ -75,35 +75,35 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kinfocenter
 %{_desktopdir}/org.kde.kinfocenter.desktop
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_edid.so
+%{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_edid.so
 %attr(755,root,root) %{_prefix}/libexec/kinfocenter-opengl-helper
-%attr(755,root,root) %{_libdir}/libKInfoCenterInternal.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kcm_about-distro.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kcm_energyinfo.so
+%{_libdir}/libKInfoCenterInternal.so
+%{_libdir}/qt6/plugins/plasma/kcms/kcm_about-distro.so
+%{_libdir}/qt6/plugins/plasma/kcms/kcm_energyinfo.so
 %dir %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_cpu.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_egl.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_firmware_security.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_glx.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_interrupts.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_kwinsupportinfo.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_opencl.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_pci.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_samba.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_usb.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_vulkan.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_wayland.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_xserver.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_audio_information.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_block_devices.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_network.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_memory.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_sensors.so
+%{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_cpu.so
+%{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_egl.so
+%{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_firmware_security.so
+%{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_glx.so
+%{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_interrupts.so
+%{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_kwinsupportinfo.so
+%{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_opencl.so
+%{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_pci.so
+%{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_samba.so
+%{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_usb.so
+%{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_vulkan.so
+%{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_wayland.so
+%{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_xserver.so
+%{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_audio_information.so
+%{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_block_devices.so
+%{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_network.so
+%{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_memory.so
+%{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_sensors.so
 %dir %{_libdir}/qt6/qml/org/kde/kinfocenter
 %dir %{_libdir}/qt6/qml/org/kde/kinfocenter/private
 %{_libdir}/qt6/qml/org/kde/kinfocenter/private/KInfoCenterInternal.qmltypes
 %{_libdir}/qt6/qml/org/kde/kinfocenter/private/kde-qmlmodule.version
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/kinfocenter/private/libKInfoCenterInternalplugin.so
+%{_libdir}/qt6/qml/org/kde/kinfocenter/private/libKInfoCenterInternalplugin.so
 %dir %{_libdir}/qt6/qml/org/kde/kinfocenter/private/qml
 %{_libdir}/qt6/qml/org/kde/kinfocenter/private/qml/CommandOutputKCM.qml
 %{_libdir}/qt6/qml/org/kde/kinfocenter/private/qmldir
