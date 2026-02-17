@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.5.5
+%define		kdeplasmaver	6.6.0
 %define		qtver		5.15.2
 %define		kpname		kinfocenter
 Summary:	kinfocenter
 Name:		kp6-%{kpname}
-Version:	6.5.5
-Release:	2
+Version:	6.6.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	7cbc421bcd9ba2c35994bf945c9ff421
+# Source0-md5:	53c4e54542e126930262b32d5883b670
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	OpenGL-devel
@@ -125,3 +125,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_datadir}/kinfocenter/firmware_security/fwupdmgr.sh
 %{_datadir}/metainfo/org.kde.kinfocenter.appdata.xml
 %{_datadir}/polkit-1/actions/org.kde.kinfocenter.dmidecode.policy
+%attr(755,root,root) %{_prefix}/libexec/kinfocenter-vulkan-helper
+%dir %{_datadir}/kinfocenter/network
+%attr(755,root,root) %{_datadir}/kinfocenter/network/ip.sh
