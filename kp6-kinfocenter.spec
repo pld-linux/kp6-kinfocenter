@@ -40,6 +40,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 A utility that provides information about a computer system.
 
+%description -l pl.UTF-8
+Program dostarczający informacji o systemie komputerowym.
+
 %prep
 %setup -q -n %{kpname}-%{version}
 
