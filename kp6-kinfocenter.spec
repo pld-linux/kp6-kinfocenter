@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.6.5
+%define		kdeplasmaver	6.7.0
 %define		qtver		5.15.2
 %define		kpname		kinfocenter
 Summary:	kinfocenter
 Name:		kp6-%{kpname}
-Version:	6.6.5
+Version:	6.7.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	3374df47cc9ecb0d940ce68ca212cb89
+# Source0-md5:	346e1482f478fda8ee1d33b1826cc1cb
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	OpenGL-devel
@@ -82,7 +82,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_prefix}/libexec/kinfocenter-opengl-helper
 %{_libdir}/libKInfoCenterInternal.so
 %{_libdir}/qt6/plugins/plasma/kcms/kcm_about-distro.so
-%{_libdir}/qt6/plugins/plasma/kcms/kcm_energyinfo.so
 %dir %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter
 %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_cpu.so
 %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_egl.so
@@ -102,6 +101,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_network.so
 %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_memory.so
 %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_sensors.so
+%{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_energyinfo.so
 %dir %{_libdir}/qt6/qml/org/kde/kinfocenter
 %dir %{_libdir}/qt6/qml/org/kde/kinfocenter/private
 %{_libdir}/qt6/qml/org/kde/kinfocenter/private/KInfoCenterInternal.qmltypes
@@ -112,7 +112,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/qml/org/kde/kinfocenter/private/qmldir
 %attr(755,root,root) %{_prefix}/libexec/kf6/kauth/kinfocenter-dmidecode-helper
 %{_desktopdir}/kcm_about-distro.desktop
-%{_desktopdir}/kcm_energyinfo.desktop
 %{_datadir}/dbus-1/system-services/org.kde.kinfocenter.dmidecode.service
 %{_datadir}/dbus-1/system.d/org.kde.kinfocenter.dmidecode.conf
 %dir %{_datadir}/kinfocenter
