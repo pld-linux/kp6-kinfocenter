@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	6.7.5
+%define		kdeplasmaver	6.8.0
 %define		qtver		5.15.2
 %define		kpname		kinfocenter
 Summary:	kinfocenter
 Name:		kp6-%{kpname}
-Version:	6.7.5
+Version:	6.8.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	6fab9c1b7478598db457f7958d5e9f9c
+# Source0-md5:	931ab1dcc706b96d193c0810f513d533
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	OpenGL-devel
@@ -77,9 +77,9 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{kpname}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kinfocenter
+%attr(755,root,root) %{_prefix}/libexec/kinfocenter-egl-helper
 %{_desktopdir}/org.kde.kinfocenter.desktop
 %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_edid.so
-%attr(755,root,root) %{_prefix}/libexec/kinfocenter-opengl-helper
 %{_libdir}/libKInfoCenterInternal.so
 %{_libdir}/qt6/plugins/plasma/kcms/kcm_about-distro.so
 %dir %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter
@@ -102,6 +102,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_memory.so
 %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_sensors.so
 %{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_energyinfo.so
+%{_libdir}/qt6/plugins/plasma/kcms/kinfocenter/kcm_vaapi.so
 %dir %{_libdir}/qt6/qml/org/kde/kinfocenter
 %dir %{_libdir}/qt6/qml/org/kde/kinfocenter/private
 %{_libdir}/qt6/qml/org/kde/kinfocenter/private/KInfoCenterInternal.qmltypes
